@@ -1,0 +1,111 @@
+<!DOCTYPE html>  <html lang="en">    <head>    
+  <meta charset="UTF-8" />    
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>   
+  <script src="script.js"></script> 
+  <title>Tenjeen WWE Birthday</title>    
+  <style>    
+    body {    
+      margin: 0; padding: 0;    
+      background: #000; color: #fff;    
+      font-family: 'Segoe UI', sans-serif;    
+      text-align: center; overflow-x: hidden;    
+    }    
+    section { display: none; padding: 40px 20px; }    
+    button {    
+      padding: 15px 30px;    
+      font-size: 1.1rem;    
+      background: #ff1744;    
+      color: #fff; border: none;    
+      border-radius: 8px;    
+      cursor: pointer;    
+      margin-top: 20px;    
+    }    
+    .countdown { font-size: 4rem; color: #ffea00; animation: zoom 1s infinite; }    
+    @keyframes zoom {    
+      0% { transform: scale(1); }    
+      50% { transform: scale(1.2); }    
+      100% { transform: scale(1); }    
+    }    
+    .text-line {    
+      font-size: 1.5rem;    
+      margin: 10px;    
+      opacity: 0;    
+      transition: opacity 0.5s ease-in;    
+    }    
+    .text-line.show { opacity: 1; }    
+    .highlight {    
+      font-size: 2.2rem;    
+      color: #ffea00;    
+      text-shadow: 0 0 10px red, 0 0 20px yellow;    
+      animation: glow 1s ease-in-out infinite alternate;    
+    }    
+    @keyframes glow {    
+      from { text-shadow: 0 0 10px #ffea00; }    
+      to { text-shadow: 0 0 20px red, 0 0 30px orange; }    
+    }    
+    #message {    
+      margin-top: 30px;    
+      font-size: 1.8rem;    
+      color: #00e676;    
+      font-weight: bold;    
+      display: none;    
+    }    
+    #statCard {    
+      margin-top: 30px;    
+      border: 2px solid #ff1744;    
+      border-radius: 10px;    
+      padding: 20px;    
+      max-width: 600px;    
+      background-color: #111;    
+      display: none;    
+    }    
+    #statCard h3 { color: #ffea00; }    
+  </style>    
+</head>    
+<body>  <!-- Step 1: Enter Name -->  <section id="step1" style="display: block;">    
+  <h1>🏟 Enter the Arena</h1>    
+  <p>Enter the name of the birthday champ:</p>    
+  <input id="nameInput" placeholder="Type the name..." style="padding:10px;font-size:1rem;" />    
+  <br><button onclick="checkName()">Submit</button>    
+</section>  <!-- Step 2: WWE Fan -->  <section id="step2">    
+  <h2>Are you a WWE fan?</h2>    
+  <button onclick="nextStep('step3')">Yes</button>    
+  <button onclick="alert('This arena is only for real fans!')">No</button>    
+</section>  <!-- Step 3: Quiz -->  <section id="step3">    
+  <h2>Who's your favorite wrestler?</h2>    
+  <button onclick="nextStep('step4')">John Cena</button>    
+</section>  <!-- Step 4: Fight -->  <section id="step4">    
+  <h2>Would you like to fight John Cena?</h2>    
+  <button onclick="startFight()">Yes</button>    
+</section>  <!-- Step 5: Fake Match -->  <section id="fight">    
+  <h2>🎮 The Match Begins!</h2>    
+  <div id="fightText"></div>    
+</section>  <!-- Step 6: Winner Prompt -->  <section id="winnerAsk">    
+  <h2>Would you like to know the winner?</h2>    
+  <button onclick="startCountdown()">Yes</button>    
+</section>  <!-- Step 7: Countdown -->  <section id="countdownSection">    
+  <div class="countdown" id="countdown">3...</div>    
+</section>  <!-- Step 8–9: Entrance -->  <section id="cenaEntrance">    
+  <div class="text-line">Ladies and gentlemen…</div>    
+  <div class="text-line">Boys and girls…</div>    
+  <div class="text-line">Children of all ages…</div>    
+  <div class="text-line">Tonight, we don’t just celebrate a birthday.</div>    
+  <div class="text-line">We witness the arrival of someone unforgettable.</div>    
+  <div class="text-line">Please rise for the one… the only…</div>    
+  <div class="text-line">Turning 20 today — with purpose, presence, and power.</div>    
+  <div class="text-line">A name that needs no introduction… but always gets one.</div>    
+  <div class="text-line highlight">T-E-N-J-E-E-N K-A-M-B-L-E 💥</div>    
+  <div id="message">🎉 HAPPY 20TH BIRTHDAY, TENJEEN! 🎉<br>Today’s not just your day… it’s your stage.</div>    
+</section>  <!-- Step 10: Stat Card -->  <section id="statCard">    
+  <h3>📋 STAT CARD</h3>    
+  <p>Name: Tenjeen</p>    
+  <p>Age: 20</p>    
+  <p>Signature Move: Mood Slam</p>    
+  <p>Special Skill: Making Disha smile instantly 😘</p>    
+  <p>Title: Undisputed Birthday Champion</p>    
+</section>  <audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>  
+<audio id="ding" src="ding.mp3"></audio>  
+<audio id="punch" src="punch.mp3"></audio> 
+   
+</body>   
+ </html> 
