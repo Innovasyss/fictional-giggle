@@ -3,7 +3,7 @@ function checkName() {
   if (name === 'tenjeen') {
     nextStep('step2');
   } else {
-    alert("Oops! Try again with the right name.");
+    alert("Oops! Thats not your name lier");
   }
 }
 
